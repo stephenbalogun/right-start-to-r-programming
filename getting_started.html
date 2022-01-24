@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Getting Started</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephen Balogun" />
+    <meta name="author" content="Bilikisu Aderinto" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stephen.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Getting Started
+### Stephen Balogun
+### Bilikisu Aderinto
+### Sat, January 29 2022
+
+---
+
+
+
+
+
+
+
+
+## What this course will teach you?
+
+.pull-left[
+
+- Getting started
+
+    - Installing the required softwares
+    
+    - Setting up your R workspace
+    
+- Part I
+
+    - Why use R?
+    
+    - Overview of data science/data analytics
+    
+    - Using R and RStudio
+
+]
+
+.pull-right[
+
+- Part II
+
+    - Importing your data
+
+    - Data cleaning and transformation
+    
+    - Basic data analysis
+    
+    - Plotting charts
+    
+- Part III
+
+    - Communicating your results
+    
+    - Summary
+    
+    - Next steps
+]
+
+---
+
+
+
+## Who is this class for?
+
+.left-column[
+
+- New R users
+
+- No prior computer programming knowledge 
+
+- No assumed prior knowledge of statistics
+
+]
+
+.right-column[
+
+&lt;img src="./imgs/assumptions.png" width="2083" /&gt;
+]
+
+---
+class: inverse, middle, center
+background-image: url(imgs/poster.jpeg)
+background-size: contain
+
+# Meet the facilitators!
+
+
+---
+
+## Setting up your workspace 
+
+.pull-left[
+
+- Modify default settings
+
+- From the __*Tools*__ tab, go to __*Global Options...*__ (the last listed item)
+
+- Confirm that the places highlighted are unchecked
+
+&lt;img src="./imgs/workspace_1.png" width="3432" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="./imgs/workspace2.png" width="2157" /&gt;
+]
+
+---
+
+
+## Setting up your workspace - Project
+
+.pull-left[
+
+- Use R projects
+
+- Makes your work easy to share with others
+
+- Identified by a "__*.Rproj*__" file in the folder
+
+- Create R project
+
+    - Click on the __*File*__ tab, then
+
+    - Click on __*New project*__ (should be the second option from the listed items)
+
+    - Create from "New" or "Existing" folders
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/project.png" width="922" /&gt;
+
+]
+
+---
+
+
+## Navigating RStudio 
+
+.left-column[
+
+- 3 - 4 window panes
+
+- Use the Editor pane for your codes
+
+- Send codes from the __*editor*__ to the __*console*__ either using the __*run*__ tab (it has a drop-down) or use "Ctrl + Enter"
+
+]
+
+.right-column[
+
+&lt;img src="./imgs/rstudio pane.png" width="1702" /&gt;
+]
+
+
+---
+
+
+
+## Data Science - Overview
+
+.left-column[
+- A combination of 
+
+    - computer programming
+    
+    - Scientific reasoning 
+    
+    - Data comprehension
+    
+- Varying mix of the above, depending on the specialization
+
+]
+
+.pull-right[
+&lt;img src="./imgs/datascience component2.png" width="560" /&gt;
+]
+
+---
+
+
+## Data Science - Workflow
+
+.left-column[
+
+- Getting your data (Excel, csv, etc) into R
+
+- Formatting your data appropriately
+
+- Identifying patterns (exploration)
+
+- Plotting graphs
+
+- Performing statistics
+
+- Passing the information
+
+]
+
+.pull-right[
+&lt;img src="./imgs/datascience workflow.png" width="1336" /&gt;
+]
+
+
+---
+
+## Tabular data
+
+.left-column[
+
+- Rows are horizontal
+
+- Columns are vertical
+
+- Should be __*tidy*__
+
+    - Each variable must have its own column
+    
+    - Each observation must have its own row
+    
+    - Each value must have its own cell
+]
+
+.right-column[
+&lt;img src="./imgs/tidy data.png" width="1600" /&gt;
+
+  &gt; "Tidy datasets are alike, but every messy dataset is messy in its own way"
+  &gt;
+  &gt; - Hadley Wickham
+]
+
+---
+
+## Tidy data
+
+.pull-left[
+
+What makes this data *"untidy"*?
+&lt;img src="./imgs/untidy data.png" width="728" /&gt;
+]
+
+.pull-right[
+What makes this data "*tidy"*?
+
+&lt;img src="./imgs/tidy.png" width="766" /&gt;
+]
+
+---
+
+## Variables
+
+- Numeric variables
+
+    - Continuous (can be expressed as fractions) e.g. weight
+    
+    - Discrete (always whole numbers) e.g. heart rate
+
+- Categorical variables (generally coded)
+
+    - ordinal (a graduation pattern observable) e.g. level of education
+    
+    - nominal (no ranking) e.g. gender/sex
+    
+- Text variables e.g. Name
+
+- __*Type of analysis depends on the variable type*__
+
+- __*Variables can be converted from one form to another*__ e.g. age (a numeric variable), can be binned into age-groups (a categorical variable)
+
+---
+
+## R functions
+
+- Essentially the "heart" of R
+
+- R can perform simple arithmetics like `1 + 1`
+
+- Most functions follow this format:
+
+
+    function_name(object, 1st argument, 2nd argument, etc)
+
+    
+- Example, assuming you have a population of 10 and you want to sample 2 persons (without replacement)
+
+
+    sample(x = 1:10, size = 2, replace = FALSE)
+
+- You can have functions with no arguments e.g. `Sys.Date()`
+
+- You can also have functions without name (so called anonymous functions)
+
+---
+
+## R packages
+
+.pull-left[
+
+- All R functions are contained in *packages*
+
+- *R packages* are a collection of *functions* that perform similar tasks
+
+- R comes with pre-installed packages 
+
+- Packages extend the functions of base R
+
+- Additional packages can be installed depending on your needs
+
+- *CRAN* and *GitHub* are two common package repositories
+
+- You can also write your own packages!!!
+
+]
+
+.pull-right[
+- to install a package from CRAN, use:
+
+    `install.packages("pkg_name")`
+
+- better still, use the `p_install()` function from the {pacman} package:
+
+    p_install("pkg_name")
+    
+- Load packages (except for base R packages)
+
+- To load a package, use:
+
+  `library("pkg_name")` or
+  
+  `p_load("pkg_name")` # the `p_load()` function is from the {pacman} package so yu will have to load {pacman} first
+  
+]
+
+---
+
+
+## Assigning values
+
+.pull-left[
+
+- R can let you "save" a value for re-use
+
+- To save a value, decide on the name you want to give it
+
+- Use syntactic names
+
+  - A combination of letters, digits, ".", and "_"
+
+  - Don't start with a number
+  
+  - When you start with a ".", it cannot be followed by a number 
+  
+  - no spaces allowed
+  
+  - avoid *reserved* words
+  
+]
+
+.pull-right[
+
+- Use meaningful names (for your sake and others)
+
+- Generally two common naming conventions (snakecase &amp; camelcase):
+
+  - Here is a snakecase example: this_is_a_snake_case
+  
+  - Here is a camelcase example: thisIsACamelCase
+  
+- I recommend the snakecase
+
+- Caution!! Existing values of a similar name will be overwritten so names have to be unique
+
+]
+  
+---
+
+## Vectors: data building blocks
+
+.pull-left[
+
+- How R recognise variable/data type
+
+- Atomic vectors (4 common)
+
+  1. integers (equivalent of discrete variables) e.g. `c(20L, 4L, 100L)`
+  
+  2. double (equivalent of continuous variables) e.g. `c(20, 4, 100)`
+  
+      are approximations (is 2 equals to squaroot of 2 exponential 2?)
+  
+  3. logical/boolean
+  
+  4. characters e.g. `c("Stephen", "12", "TRUE")`
+  
+  5. complex
+  
+  6. raw
+]
+
+.pull-right[
+
+#### Hierarchy of vectors
+
+&lt;img src="./imgs/vector coercion.png" width="1448" /&gt;
+
+*try*: c(20, TRUE, "Stephen")
+]
+
+---
+
+## Vectors: lists &amp; augmented vectors
+
+.pull-left[
+
+How about dates &amp; categorical variables?
+
+- 4 Augmented vectors
+
+  1. factors (from integers)
+  
+  2. date (from double) 
+  
+    R format for date is the ISO8601 (yyyy-mm-dd)
+  
+  3. datetime (from double)
+  
+  4. duration i.e. time difference (from double)
+
+]
+
+.pull-right[
+
+What if I want to have a mix of data types?
+
+- Lists
+
+    e.g. `list(29, TRUE, "Stephen")`
+
+- Dataframes
+
+    - data with rows and columns
+    
+    - variables are in the columns, observations in the rows (tidy data)
+    
+    - columns must be of equal length
+    
+    - each column can have only one type of vector
+
+]
+
+
+---
+
+## Working with vectors
+
+.pull-left[
+
+What type of vector am I dealing with?
+
+- use `typeof()` e.g.
+
+    `typeof(10)`
+    
+    `typeof("Stephen")`
+    
+    `typeof(TRUE)`
+    
+    `typeof("FALSE")` [practice]
+
+]
+
+.pull-right[
+    
+Can I check to know if my vector is of a particular type?
+
+- use `is.atomic_type` e.g.
+
+    `is.double(10)`
+    
+    `is.logical(TRUE)`
+
+Can I force my vectors to change from one type to another? yes
+
+- use `as.atomic_type` e.g.
+
+    `as.integer("10")`
+  
+    `as.logical("FALSE")`
+
+]
+
+---
+
+## Arithmetic operators
+
+.pull-left[
+
+- addition sign (+)
+
+- substraction sign (-)
+
+- division sign (/)
+
+- multiplication sign (*)
+
+- Exponential sign (^)
+
+- integer division (%/%)
+
+- modulo division (%%) - remainder
+
+- greater than (&gt;) e.g. 5 &gt; 3
+
+- less than (&lt;) e.g. 5 &lt; 3
+
+]
+
+.pull-right[
+
+- greater than or equal to (&gt;=) e.g. `5 &gt;= 10/2`
+
+- less than or equal to (&lt;=) e.g. `5 &lt;= 10/2`
+
+- equal to (==) e.g. `1/49 * 49 == 1`
+
+- not equal to (!=) e.g. `4 != 2*2`
+
+- not/negate (!) e.g. `!TRUE`
+
+- or (|) e.g. `4 &gt; 6 | 3`
+
+- and (&amp;) e.g. `4 &gt; 6 &amp; 3`
+
+- contains (%in%) e.g. `c("Stephen", "Taiye", "Kehinde", "Tade", "Tola") %in% c("Taiye", "Kehinde")`
+]
+
+---
+
+## Summary
+
+1. Set up your working environment, use R project.
+
+2. Data is not always tidy. You may need to manipulate the data to get it in the right format.
+
+3. Most interactions with R will be via functions. Functions are organized into packages.
+
+4. If you want to keep objects in memory, you must assign them to a name.
+
+5. Most arithmetic operators are similar to what you would expect.
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Questions
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(./imgs/LOGO.jfif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

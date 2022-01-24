@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R for Data Science - Introduction</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephen Balogun" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stephen.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R for Data Science - Introduction
+### Stephen Balogun
+### Sat, January 29 2022
+
+---
+
+
+
+
+
+
+
+
+## Outline
+
+- About Abuja R user Group
+
+- What can R do for you?
+
+- Industries using R
+
+- Other benefits of R
+
+- What will you learn from this short course?
+
+- Requirements / Installations
+
+- Q&amp;A (10 minutes)
+
+
+---
+
+## About me
+
+.right-column[
+
+- A Public Health Physician
+
+- A quality improvement professional and patient safety expert - led me to data science
+
+- I am currently the Team Lead, Epidemiology and Surveillance Unit for the CARITAS Nigeria 4GATES program
+
+- Author, [{tidyndr}](https://CRAN.R-project.org/package=tidyndr)
+
+- Co-founder: [r4hds](https://r4hds.netlify.app/)
+
+- [My personal website](https://taiye.rbind.io) 😄
+
+- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>: follow @eppydoc 👍
+
+- <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>: [Stephen Balogun](https://www.linkedin.com/in/stbalogun/) 
+]
+
+.left-column[
+&lt;img src="./imgs/Stephen.png" width="731" /&gt;
+]
+
+
+---
+
+## What can R do for you?
+
+- You probably assume that R can be used for complex data analytics including visualization and modelling (I guess that's why you are here).
+
+- Yes, <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> can do all of those, a lot more!!! 💌 🤗
+
+
+- Let's take a look at some of the things R can do for you 🛣
+
+
+
+---
+
+## Beautiful Arts in R
+
+.pull-left[
+
+&lt;img src="./imgs/ij_01.png" width="80%" /&gt;
+&lt;footnote&gt; &lt;i&gt;source:&lt;/i&gt; Ijeamaka Anyene |@ijeamaka_a
+&lt;/footnote&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/ij_02.png" width="80%" /&gt;
+
+]
+
+
+
+
+
+---
+
+## Beautiful Arts in R - 02
+
+.pull-left[
+
+&lt;img src="./imgs/ij_03.png" width="80%" /&gt;
+
+&lt;footnote&gt; &lt;i&gt;source:&lt;/i&gt; Ijeamaka Anyene |@ijeamaka_a
+&lt;/footnote&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/ij_04.png" width="80%" /&gt;
+
+]
+
+
+---
+
+
+## Games
+
+.pull-left[
+
+&lt;img src="./imgs/games_02.png" width="80%" /&gt;
+
+&lt;footnote&gt;
+  &lt;i&gt;source:&lt;/i&gt;
+  &lt;a "https://rpodcast.shinyapps.io/hotshot_dashboard/?_ga=2.208167953.2086729808.1633251750-2118447652.1633251750"&gt;
+  Hotshots dashboard engine
+  &lt;/a&gt;
+&lt;/footnote&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/games_03.png" width="100%" /&gt;
+
+]
+
+---
+
+
+## Text mining - 01
+
+&lt;img src="./imgs/wc_01.png" width="80%" /&gt;
+
+
+&lt;footnote&gt;
+  &lt;i&gt;source:&lt;/i&gt;
+  &lt;a "https://www.r-graph-gallery.com/wordcloud.html"&gt;
+  R graph gallery
+  &lt;/a&gt;
+&lt;/footnote&gt;
+
+---
+
+## Dashboards
+
+.pull-left[
+
+&lt;img src="./imgs/dashboards_01.png" width="100%" /&gt;
+
+&lt;footnote&gt;
+  &lt;i&gt;source:&lt;/i&gt;
+  &lt;a ""&gt;
+  Shiny demo
+  &lt;/a&gt;
+&lt;/footnote&gt;
+
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/dashboards_02.png" width="100%" /&gt;
+
+&lt;footnote&gt;
+  &lt;i&gt;source:&lt;/i&gt;
+  &lt;a "https://skylab.cdph.ca.gov/ODdash/"&gt;
+  California Overdose Surveillance
+  &lt;/a&gt;
+&lt;/footnote&gt;
+
+]
+
+
+
+---
+
+## Websites
+
+.pull-left[
+
+&lt;img src="./imgs/website_01.png" width="100%" /&gt;
+
+&lt;footnote&gt;
+  &lt;a "https://taiye.netlify.app"&gt;
+  &lt;i&gt;Personal website&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/footnote&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/website_02.png" width="100%" /&gt;
+
+
+&lt;footnote&gt;
+  &lt;a "https://r4hds.app"&gt;
+  &lt;i&gt;Corporate website&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/footnote&gt;
+]
+
+
+---
+
+## Others
+
+.pull-left[
+
+- GIS Maps
+
+&lt;img src="./imgs/gis.png" width="100%" /&gt;
+
+&lt;footnote&gt;
+  &lt;i&gt;Source&lt;/i&gt;
+  Balogun Stephen | @eppdoc
+&lt;/footnote&gt;
+
+]
+
+.pull-right[
+
+- Music analysis ([rmusic]("https://towardsdatascience.com/compose-and-play-music-in-r-with-the-rmusic-package-b2afa90761ea") and [chorrrds]("https://www.analyticsvidhya.com/blog/2018/08/chorrrds-r-package-analyzing-working-music-data/"))
+
+&lt;img src="./imgs/music.png" width="85%" /&gt;
+]
+
+---
+
+## R in Industries
+
+.right-column[
+
+
+&lt;img src="./imgs/industries_02.png" width="80%" /&gt;
+
+
+&lt;img src="./imgs/industries_01.png" width="80%" /&gt;
+
+]
+
+.left-column[
+
+- Google
+
+- Facebook
+
+- Microsoft
+
+- Twitter
+
+- Norvatis
+
+- WHO
+
+- Bioconductor (genomics data analysis)
+
+- Janssen
+
+
+&lt;footnote&gt;
+  &lt;sup&gt;1&lt;/sup&gt;&lt;a "http://makemeanalyst.com/companies-using-r/"&gt;
+  Companies using R
+  &lt;/a&gt;
+  &lt;br/&gt;
+  
+  &lt;sup&gt;2&lt;/sup&gt;&lt;a "https://r4hds.netlify.app/why_r"&gt;
+  Why you should use R
+  &lt;/a&gt;
+&lt;/footnote&gt;
+]
+
+---
+
+## Other benefits of R
+
+- [Open source 😃](https://en.wikipedia.org/wiki/Open_source)
+
+- [Free 🆓](https://www.gnu.org/philosophy/free-sw.html)
+
+- [Strong R community/support 👪](https://community.rstudio.com/)
+
+- [Reproducible 👨‍🔬](https://www.annualreviews.org/doi/10.1146/annurev-publhealth-012420-105110?url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org&amp;rfr_dat=cr_pub++0pubmed)
+
+- Broad 📚
+---
+
+## What you will learn
+
+This short course will get you started.
+
+- Basic Introduction to R
+
+- Importing your data into R
+
+- Transforming your data into "easy-to-use" format
+
+- Data visualization - making simple charts
+
+- Communicating your findings
+
+All these using practical examples!!!
+
+🆒 right? 😉
+
+---
+
+## Requirements
+
+- [<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> software](https://cran.r-project.org)
+
+- [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+- [some R packages](#installation-required-r-packages)
+
+- A compiler (optional):
+
+    - [Rtools on Windows](https://cran.r-project.org/bin/windows/Rtools/)
+    
+    - [Xcode command line tools on macOS](https://developer.apple.com/programs/register/)
+    
+- Good internet connection
+
+---
+
+## Installation - R
+
+.left-column[
+
+- Visit the [`CRAN` website](https://cran.r-project.org)
+
+- Follow the instructions provided. 
+
+- I encourage you accept default settings.
+]
+
+.right-column[
+&lt;img src="./imgs/cran.png" width="100%" /&gt;
+]
+
+
+---
+
+## Installation - RStudio
+
+.left-column[
+
+- Visit the [RStudio website](https://www.rstudio.com/products/rstudio/download/)
+
+- Scroll down a bit and download the free version. 
+
+- Follow the installation prompt.
+]
+
+.right-column[
+&lt;img src="./imgs/rstudio.png" width="100%" /&gt;
+]
+
+
+---
+## Installation - Required R packages
+
+.pull-left[
+- Download the [package demo folder](https://github.com/stephenbalogun/intro_to_R_demo/archive/refs/heads/master.zip)
+
+- Unzip and place in a folder of your choice
+
+- In the unzipped folder, click on `*.Rproj` file to open your project in `RStudio`
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/installation.png" width="100%" /&gt;
+]
+
+
+---
+## Installation - Required R packages 2
+
+.left-column[
+- Follow the three steps as indicated
+
+- You will need internet connection
+
+- Previously installed packages will *not* be re-installed
+
+- You are now ready for the sessions!!!
+
+]
+
+.right-column[
+
+&lt;img src="./imgs/installation_final.png" width="100%" /&gt;
+]
+  
+
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Questions
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(./imgs/LOGO.jfif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

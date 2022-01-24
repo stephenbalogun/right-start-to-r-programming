@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>PART II: Import, manipulate and analyze your data</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Bilikisu Aderinto" />
+    <meta name="author" content="Stephen Balogun" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="stephen.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# PART II: Import, manipulate and analyze your data
+### Bilikisu Aderinto
+### Stephen Balogun
+### Sat, January 29 2022
+
+---
+
+
+
+
+
+
+
+
+## Recap of Part I
+
+.pull-left[
+
+- Setting up your work environment is essential for good project experience.
+
+- Your interactions with R will be largely through functions which are contained in packages
+
+- Most times, you will work with tabular data (made up of rows and columns)
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/recap.jpg" width="704" /&gt;
+]
+
+---
+
+## Part II outline
+
+1. Importing your data (web, computer, other sources)
+
+3. Managing different file formats (*.csv*, *.xlsx*, *.txt* etc)
+
+4. Data cleaning and transformation
+
+5. Basic analysis
+
+6. Data visualization: plotting charts
+
+---
+
+## Our data at a glance (review)
+
+.pull-left[
+
+- ID: for patient/respondent identification
+
+- Date: date of form completion 
+
+- Age: current age of respondent/patient
+
+- Sex: biological sex of respondent/patient at birth (Either male or female)
+
+- State: One of 6 states (Rivers, FCT, Lagos, Sokoto, Abia and Kaduna)
+
+]
+
+.pull-right[
+
+- Married: a dichotomous variable (YES/NO)
+
+- Weight: weight of respondent/patient in "Kg"
+
+- height: height of respondent/patient in "cm"
+
+- blood pressue: systolic (numerator) and diastolic (denominator) blood pressure of respondent/patient
+
+- bmi: values obtained from the field by dividing the weight (in Kg) by the square of the height (in metres)
+]
+
+
+
+---
+
+## Organizing the project directory 
+
+.pull-left[
+
+- Put your data (inputs) in a different folder
+
+- Keep your R scripts separate
+
+- Keep your outputs in a different folders
+
+- Keep your work reproducible, __*Avoid "point-and-click" as much as possible*__ 
+
+
+]
+
+.pull-right[
+&lt;img src="./imgs/organizing.jpg" width="3200" /&gt;
+]
+
+---
+
+
+## Managing your R scripts
+
+.pull-left[
+
+- Will you be needing more than a single script?
+
+- Divide your scripts into sections and label appropriately. Use **cTRL + SHIFT + R**
+
+    - loading required packages
+    
+    - importing files
+    
+    - cleaning data
+    
+    - exploration
+    
+    - plotting charts
+    
+    - saving outputs
+    
+- Keep things simple
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/think.jpg" width="7680" /&gt;
+
+]
+
+---
+
+
+## Loading required packages 
+
+.pull-left[
+
+- **6 base** packages are loaded by default with their functions made available
+
+- Generally, any other functions will require you to access the package first
+
+- Consider all the additional packages you might need in addition to the base packages and load them
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/base_pkgs.png" width="381" /&gt;
+]
+
+
+---
+
+## Importing your file
+
+.pull-left[
+- Is your file on the local computer or online?
+
+- If online, do you want to import directly from the internet or download a local copy?
+
+- What type of file extension are you working with? Different file extension may require different packages
+
+- Import your file to R
+
+- Format your file appropriately (print and variable names)
+
+- Assign your file a name
+
+- Is your file tidy? What are the challenges? 
+
+]
+
+.pull-right[
+&lt;img src="./imgs/import.jpg" width="3968" /&gt;
+]
+
+---
+
+## Data cleaning - {dplyr}, {tidyr} and other tidyverse packages
+
+A few things identified with our data that we need to do
+
+We need to:
+
+.pull-left[
+
+- Format column names
+
+- Format the **date** for the Excel and the text documents
+
+- Convert **sex** to factors (categorical variables)
+
+- format **state** as factors
+
+]
+
+.pull-right[
+- change **married** to a logical variable
+
+- change **height** to metres
+
+- split **BP** into **bp_systole** and **bp_diastole**
+
+- Calculate new **BMI**
+]
+
+---
+
+## Exploratory questions
+
+1. How many persons from each state?
+
+2. Plot a graph of the gender distribution
+
+3. Plot a graph to demonstrate the relationship between weight and height
+
+4. How many persons have systolic hypertension?
+
+5. For each gender in each state, what are the average age, average height, and average weight?
+
+---
+
+class: inverse, middle, center
+background-size: contain
+
+# Plotting charts
+
+---
+
+## Data visualization
+
+.pull-left[
+
+- R has several packages for visualizing charts.
+
+- Charts can be static, embedded with html widgets or interactive 
+
+- {ggplot2} is one of the most common. Implemented based on the grammar of graphics
+
+- The type of chart that you plot will depend on the type of data that you have
+
+]
+
+
+.pull-right[
+
+&lt;img src="./imgs/grammar3.png" width="1770" /&gt;
+
+]
+
+---
+
+## Common plots
+
+- Histogram: for continuous variables
+
+- Bar chart: for categorical variables
+
+- Scatter plots: for continous variables
+
+- Line plot: for trend analysis
+
+- Box plot: for visualization of summaries
+
+- Pie chart: avoid if possible
+
+
+---
+
+## Layer options
+
+.pull-left[
+
+&lt;img src="./imgs/grammar.png" width="1566" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="./imgs/grammar2.png" width="2342" /&gt;
+]
+
+---
+
+## Themes
+
+&lt;img src="./imgs/themes.png" width="1176" height="500" /&gt;
+
+---
+
+## Summary
+
+- R can import several file types from both local or online platforms
+
+- You will often need to clean and transform your data before analysis
+
+- Analysis will depend on the type of conclusion of interest
+
+- There are several powerful packages for visualization. {ggplot2}, one of the most common, uses graphical layers.
+
+---
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Questions
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(./imgs/LOGO.jfif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

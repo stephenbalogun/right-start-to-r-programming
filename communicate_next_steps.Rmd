@@ -1,0 +1,164 @@
+---
+title: "PART III: Communicate your result, learn more"
+author:
+  - "Stephen Balogun"
+  - "Bilikisu Aderinto"
+date: '`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`'
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    self_contained: false
+    css: [default, rladies, rladies-fonts, stephen.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      messsage = FALSE,
+                      warning = FALSE,
+                      fig.height = 5,
+                      dpi = 60
+                      )
+```
+
+
+## Recap of previous sessions
+
+.left-column[
+
+- Most of your data will be tabular data
+
+- Specialized packages exist that support different analytic steps
+
+- Often, statistical summaries and visualizations will be required during analysis
+
+]
+
+.right-column[
+
+```{r, recap}
+knitr::include_graphics("./imgs/recap.jpg")
+```
+]
+
+---
+
+## Session outline
+
+1. Saving outputs
+
+2. Communicating your results
+
+3. Learning more
+
+---
+
+## Saving outputs
+
+Several ways exist.
+
+- Tables: Use the `export()` from the {rio} package
+
+    - for csv
+    
+    - for Excel
+    
+    - many other file types
+
+- Static plots: use `ggsave()` from the {ggplot2} package
+---
+
+    
+## Communicating your results: {rmarkdown}
+
+- HTML 
+
+- Word
+
+- PowerPoint
+
+- PDF
+
+- Articles
+
+- Abstracts
+
+---
+
+## RMarkdown
+
+- You can generate most of the communication formats with RMarkdown
+
+- An RMarkdown file contains
+
+    - A YAML header
+    
+    - Embedded code chunks
+    
+    - Free text
+    
+    - Markdown syntax
+
+- The `output` argument of the YAML header can be used to specify the file type of interest
+
+- You can share your file via email or host on  online platforms
+
+---
+
+## Where to go from here
+
+.pull-left[
+
+-  R packages 
+
+     > the {swirl} package
+     >
+     > the {learnr} package
+    
+
+- Community groups https://community.rstudio.com/
+
+- Follow `Abuja R user group` on:
+
+
+- `r fontawesome::fa("linkedin")` [LinkedIn](https://ng.linkedin.com/in/abuja-r-user-group-669ab521b)
+    
+- `r fontawesome::fa("twitter")` [Twitter](https://twitter.com/AbujaRUG/)
+    
+- `r fontawesome::fa("meetup")` [Meetup](https://www.meetup.com/Abuja-R-User-Group-Meetup/)
+
+
+]
+
+.pull-right[
+
+- Learning platforms
+
+    - Coursera
+    
+    - edX
+    
+    - Udemy
+    
+    - YouTube
+    
+    etc
+
+
+]
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
+background-size: contain
+
+# Questions
+
+
