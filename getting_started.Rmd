@@ -105,79 +105,89 @@ background-size: contain
 
 ---
 
-## Setting up your workspace 
+## What can R do for you?
 
 .pull-left[
 
-- Modify default settings
+- Analysis
 
-- From the __*Tools*__ tab, go to __*Global Options...*__ (the last listed item)
+  - Quantitative 
+  - Qualitative (including text mining)
+  - Specialized analysis (e.g. music)
+    
+- Visualizations
 
-- Confirm that the places highlighted are unchecked
+  - Graphs
+  - GIS maps
+  - Games
+  - Arts
 
-```{r, workspace}
-knitr::include_graphics("./imgs/workspace_1.png")
-```
+- Websites
+
+  - Blogging
+  - Personal/professional
 ]
+
 
 .pull-right[
 
-```{r, workspace-1}
-knitr::include_graphics("./imgs/workspace2.png")
-```
-]
-
----
-
-
-## Setting up your workspace - Project
-
-.pull-left[
-
-- Use R projects
-
-- Makes your work easy to share with others
-
-- Identified by a "__*.Rproj*__" file in the folder
-
-- Create R project
-
-    - Click on the __*File*__ tab, then
-
-    - Click on __*New project*__ (should be the second option from the listed items)
-
-    - Create from "New" or "Existing" folders
-
-]
-
-.pull-right[
-
-```{r, project}
-knitr::include_graphics("./imgs/project.png")
-```
+<!-- ```{r, industries, out.width="80%"} -->
+<!-- knitr::include_graphics("./imgs/industries_02.png") -->
+<!-- ``` -->
 
 ]
 
 ---
 
+## Why should you choose R?
 
-## Navigating RStudio 
+.pull-left[
 
-.left-column[
+- [Open source `r emo::ji("open")`](https://en.wikipedia.org/wiki/Open_source)
 
-- 3 - 4 window panes
+- [Free `r emo::ji("free")`](https://www.gnu.org/philosophy/free-sw.html)
 
-- Use the Editor pane for your codes
+- [Strong R community/support `r emo::ji("family")`](https://community.rstudio.com/)
 
-- Send codes from the __*editor*__ to the __*console*__ either using the __*run*__ tab (it has a drop-down) or use "Ctrl + Enter"
+- [Reproducible `r emo::ji("research")`](https://www.annualreviews.org/doi/10.1146/annurev-publhealth-012420-105110?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed)
+
+- Broad `r emo::ji("books")`
+
+
+### R in Industries
+
+- Google, Facebook, Microsoft, Twitter
+
+- Norvatis wHO, Bioconductor (genomics data analysis), Janssen
 
 ]
 
-.right-column[
+.pull-right[
 
-```{r, rstudio-pane}
-knitr::include_graphics("./imgs/rstudio pane.png")
+```{r, industries, out.width="80%"}
+knitr::include_graphics("./imgs/industries_02.png")
 ```
+
+
+```{r, industries-02, out.width="80%"}
+knitr::include_graphics("./imgs/industries_01.png")
+```
+
+
+
+<footer>
+  <sup>1</sup>
+  
+  <a "http://makemeanalyst.com/companies-using-r/">
+  <span style="font-size:80%;">Companies using R</span>
+  </a>
+  <br/>
+  
+  <sup>2</sup><a "https://r4hds.netlify.app/why_r">
+   <span style="font-size:80%;">Why you should use R</span>
+  </a>
+</footer>
+
 ]
 
 
@@ -304,6 +314,148 @@ knitr::include_graphics("./imgs/tidy.png")
 - __*Type of analysis depends on the variable type*__
 
 - __*Variables can be converted from one form to another*__ e.g. age (a numeric variable), can be binned into age-groups (a categorical variable)
+
+
+---
+
+## Requirements
+
+- [`r fontawesome::fa("r-project")` software](https://cran.r-project.org)
+
+- [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+- [some R packages](#installation-required-r-packages)
+
+- A compiler (optional):
+
+    - [Rtools on Windows](https://cran.r-project.org/bin/windows/Rtools/)
+    
+    - [Xcode command line tools on macOS](https://developer.apple.com/programs/register/)
+    
+- Good internet connection
+
+---
+
+## Installation - R
+
+.left-column[
+
+- Visit the [`CRAN` website](https://cran.r-project.org)
+
+- Follow the instructions provided. 
+
+- I encourage you accept default settings.
+]
+
+.right-column[
+```{r, cran, out.width="100%"}
+knitr::include_graphics("./imgs/cran.png")
+```
+]
+
+
+---
+
+## Installation - RStudio
+
+.left-column[
+
+- Visit the [RStudio website](https://www.rstudio.com/products/rstudio/download/)
+
+- Scroll down a bit and download the free version. 
+
+- Follow the installation prompt.
+]
+
+.right-column[
+```{r, rstudio, out.width="100%"}
+knitr::include_graphics("./imgs/rstudio.png")
+```
+]
+
+
+---
+## Installation - Required R packages
+
+
+
+---
+
+## Setting up your workspace 
+
+.pull-left[
+
+- Modify default settings
+
+- From the __*Tools*__ tab, go to __*Global Options...*__ (the last listed item)
+
+- Confirm that the places highlighted are unchecked
+
+```{r, workspace}
+knitr::include_graphics("./imgs/workspace_1.png")
+```
+]
+
+.pull-right[
+
+```{r, workspace-1}
+knitr::include_graphics("./imgs/workspace2.png")
+```
+]
+
+---
+
+
+## Setting up your workspace - Project
+
+.pull-left[
+
+- Use R projects
+
+- Makes your work easy to share with others
+
+- Identified by a "__*.Rproj*__" file in the folder
+
+- Create R project
+
+    - Click on the __*File*__ tab, then
+
+    - Click on __*New project*__ (should be the second option from the listed items)
+
+    - Create from "New" or "Existing" folders
+
+]
+
+.pull-right[
+
+```{r, project}
+knitr::include_graphics("./imgs/project.png")
+```
+
+]
+
+---
+
+
+## Navigating RStudio 
+
+.left-column[
+
+- 3 - 4 window panes
+
+- Use the Editor pane for your codes
+
+- Send codes from the __*editor*__ to the __*console*__ either using the __*run*__ tab (it has a drop-down) or use "Ctrl + Enter"
+
+]
+
+.right-column[
+
+```{r, rstudio-pane}
+knitr::include_graphics("./imgs/rstudio pane.png")
+```
+]
+
 
 ---
 
@@ -578,9 +730,13 @@ Can I force my vectors to change from one type to another? yes
 
 ## Summary
 
-1. Set up your working environment, use R project.
+1. R is free, versatile and used in various industries
 
-2. Data is not always tidy. You may need to manipulate the data to get it in the right format.
+2. R can ingest several types of data and cross-communicates with several other analytic software
+
+3. Data is not always tidy. You may need to manipulate the data to get it in the right format
+
+2. Set up your working environment, use R project
 
 3. Most interactions with R will be via functions. Functions are organized into packages.
 

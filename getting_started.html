@@ -101,71 +101,85 @@ background-size: contain
 
 ---
 
-## Setting up your workspace 
+## What can R do for you?
 
 .pull-left[
 
-- Modify default settings
+- Analysis
 
-- From the __*Tools*__ tab, go to __*Global Options...*__ (the last listed item)
+  - Quantitative 
+  - Qualitative (including text mining)
+  - Specialized analysis (e.g. music)
+    
+- Visualizations
 
-- Confirm that the places highlighted are unchecked
+  - Graphs
+  - GIS maps
+  - Games
+  - Arts
 
-&lt;img src="./imgs/workspace_1.png" width="3432" /&gt;
+- Websites
+
+  - Blogging
+  - Personal/professional
 ]
+
 
 .pull-right[
 
-&lt;img src="./imgs/workspace2.png" width="2157" /&gt;
-]
-
----
-
-
-## Setting up your workspace - Project
-
-.pull-left[
-
-- Use R projects
-
-- Makes your work easy to share with others
-
-- Identified by a "__*.Rproj*__" file in the folder
-
-- Create R project
-
-    - Click on the __*File*__ tab, then
-
-    - Click on __*New project*__ (should be the second option from the listed items)
-
-    - Create from "New" or "Existing" folders
-
-]
-
-.pull-right[
-
-&lt;img src="./imgs/project.png" width="922" /&gt;
+&lt;!-- ```{r, industries, out.width="80%"} --&gt;
+&lt;!-- knitr::include_graphics("./imgs/industries_02.png") --&gt;
+&lt;!-- ``` --&gt;
 
 ]
 
 ---
 
+## Why should you choose R?
 
-## Navigating RStudio 
+.pull-left[
 
-.left-column[
+- [Open source 😰](https://en.wikipedia.org/wiki/Open_source)
 
-- 3 - 4 window panes
+- [Free 🆓](https://www.gnu.org/philosophy/free-sw.html)
 
-- Use the Editor pane for your codes
+- [Strong R community/support 👪](https://community.rstudio.com/)
 
-- Send codes from the __*editor*__ to the __*console*__ either using the __*run*__ tab (it has a drop-down) or use "Ctrl + Enter"
+- [Reproducible 👨‍🔬](https://www.annualreviews.org/doi/10.1146/annurev-publhealth-012420-105110?url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org&amp;rfr_dat=cr_pub++0pubmed)
+
+- Broad 📚
+
+
+### R in Industries
+
+- Google, Facebook, Microsoft, Twitter
+
+- Norvatis wHO, Bioconductor (genomics data analysis), Janssen
 
 ]
 
-.right-column[
+.pull-right[
 
-&lt;img src="./imgs/rstudio pane.png" width="1702" /&gt;
+&lt;img src="./imgs/industries_02.png" width="80%" /&gt;
+
+
+&lt;img src="./imgs/industries_01.png" width="80%" /&gt;
+
+
+
+&lt;footer&gt;
+  &lt;sup&gt;1&lt;/sup&gt;
+  
+  &lt;a "http://makemeanalyst.com/companies-using-r/"&gt;
+  &lt;span style="font-size:80%;"&gt;Companies using R&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;br/&gt;
+  
+  &lt;sup&gt;2&lt;/sup&gt;&lt;a "https://r4hds.netlify.app/why_r"&gt;
+   &lt;span style="font-size:80%;"&gt;Why you should use R&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/footer&gt;
+
 ]
 
 
@@ -282,6 +296,136 @@ What makes this data "*tidy"*?
 - __*Type of analysis depends on the variable type*__
 
 - __*Variables can be converted from one form to another*__ e.g. age (a numeric variable), can be binned into age-groups (a categorical variable)
+
+
+---
+
+## Requirements
+
+- [<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> software](https://cran.r-project.org)
+
+- [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+- [some R packages](#installation-required-r-packages)
+
+- A compiler (optional):
+
+    - [Rtools on Windows](https://cran.r-project.org/bin/windows/Rtools/)
+    
+    - [Xcode command line tools on macOS](https://developer.apple.com/programs/register/)
+    
+- Good internet connection
+
+---
+
+## Installation - R
+
+.left-column[
+
+- Visit the [`CRAN` website](https://cran.r-project.org)
+
+- Follow the instructions provided. 
+
+- I encourage you accept default settings.
+]
+
+.right-column[
+&lt;img src="./imgs/cran.png" width="100%" /&gt;
+]
+
+
+---
+
+## Installation - RStudio
+
+.left-column[
+
+- Visit the [RStudio website](https://www.rstudio.com/products/rstudio/download/)
+
+- Scroll down a bit and download the free version. 
+
+- Follow the installation prompt.
+]
+
+.right-column[
+&lt;img src="./imgs/rstudio.png" width="100%" /&gt;
+]
+
+
+---
+## Installation - Required R packages
+
+
+
+---
+
+## Setting up your workspace 
+
+.pull-left[
+
+- Modify default settings
+
+- From the __*Tools*__ tab, go to __*Global Options...*__ (the last listed item)
+
+- Confirm that the places highlighted are unchecked
+
+&lt;img src="./imgs/workspace_1.png" width="3432" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="./imgs/workspace2.png" width="2157" /&gt;
+]
+
+---
+
+
+## Setting up your workspace - Project
+
+.pull-left[
+
+- Use R projects
+
+- Makes your work easy to share with others
+
+- Identified by a "__*.Rproj*__" file in the folder
+
+- Create R project
+
+    - Click on the __*File*__ tab, then
+
+    - Click on __*New project*__ (should be the second option from the listed items)
+
+    - Create from "New" or "Existing" folders
+
+]
+
+.pull-right[
+
+&lt;img src="./imgs/project.png" width="922" /&gt;
+
+]
+
+---
+
+
+## Navigating RStudio 
+
+.left-column[
+
+- 3 - 4 window panes
+
+- Use the Editor pane for your codes
+
+- Send codes from the __*editor*__ to the __*console*__ either using the __*run*__ tab (it has a drop-down) or use "Ctrl + Enter"
+
+]
+
+.right-column[
+
+&lt;img src="./imgs/rstudio pane.png" width="1702" /&gt;
+]
+
 
 ---
 
@@ -554,9 +698,13 @@ Can I force my vectors to change from one type to another? yes
 
 ## Summary
 
-1. Set up your working environment, use R project.
+1. R is free, versatile and used in various industries
 
-2. Data is not always tidy. You may need to manipulate the data to get it in the right format.
+2. R can ingest several types of data and cross-communicates with several other analytic software
+
+3. Data is not always tidy. You may need to manipulate the data to get it in the right format
+
+2. Set up your working environment, use R project
 
 3. Most interactions with R will be via functions. Functions are organized into packages.
 
