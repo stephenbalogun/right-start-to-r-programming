@@ -13,21 +13,30 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-# PART II: Import, manipulate and analyze your data
-### Bilikisu Aderinto
-### Stephen Balogun
-### Sat, January 29 2022
+
+
+
+
+class: inverse, center, hide-logo, title
+background-image: url(imgs/title.png)
+background-size: cover
+
+## &lt;span style='font-family:Arial; color: black; font-weight:400;'&gt;Right Start Programming with R language&lt;/span&gt;
+
+### Part II: Import, manipulate and analyse
+
+.left[
+
+&lt;span style="font-weight: 600; font-size: 28px;"&gt;Bilikisu Aderinto&lt;/span&gt;
+
+&lt;span style="font-weight: 600; font-size: 28px;"&gt;Stephen Balogun&lt;/span&gt;
+
+&lt;span class="my_date"&gt;Sat, January 29 2022&lt;/span&gt;
+
+]
 
 ---
-
-
-
-
-
-
-
 
 ## Recap of Part I
 
@@ -48,7 +57,7 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Part II outline
+## Outline
 
 1. Importing your data (web, computer, other sources)
 
@@ -62,35 +71,17 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Our data at a glance (review)
+## Our data at a glance: Africa COVID-19 dataset
 
-.pull-left[
+- Country/Region: Country of reporting
 
-- ID: for patient/respondent identification
+- Date: date of reporting
 
-- Date: date of form completion 
+- Confirmed: total confirmed cases of COVID-19 from the country
 
-- Age: current age of respondent/patient
+- Deaths: total confirmed deaths due to COVID-19 from the country
 
-- Sex: biological sex of respondent/patient at birth (Either male or female)
-
-- State: One of 6 states (Rivers, FCT, Lagos, Sokoto, Abia and Kaduna)
-
-]
-
-.pull-right[
-
-- Married: a dichotomous variable (YES/NO)
-
-- Weight: weight of respondent/patient in "Kg"
-
-- height: height of respondent/patient in "cm"
-
-- blood pressue: systolic (numerator) and diastolic (denominator) blood pressure of respondent/patient
-
-- bmi: values obtained from the field by dividing the weight (in Kg) by the square of the height (in metres)
-]
-
+- Recovered: Cumulative number of persons who have recovered from COVID-19 from the country
 
 
 ---
@@ -225,21 +216,19 @@ We need to:
 
 ---
 
-## Exploratory questions
+## Practice
 
-1. How many persons from each state?
+- Simple exploration
 
-2. Plot a graph of the gender distribution
+- Summary of your data
 
-3. Plot a graph to demonstrate the relationship between weight and height
+- Using the `pipe` operator
 
-4. How many persons have systolic hypertension?
-
-5. For each gender in each state, what are the average age, average height, and average weight?
+- Data wrangling
 
 ---
 
-class: inverse, middle, center
+class: middle, center, hide-logo, question
 background-size: contain
 
 # Plotting charts
@@ -306,6 +295,18 @@ background-size: contain
 
 ---
 
+## Practice - 2
+
+- Using `{ggplot2}` package
+
+- Mapping variables
+
+- Selecting your type of chart
+
+- Plotting bar chart
+
+---
+
 ## Summary
 
 - R can import several file types from both local or online platforms
@@ -314,12 +315,14 @@ background-size: contain
 
 - Analysis will depend on the type of conclusion of interest
 
-- There are several powerful packages for visualization. {ggplot2}, one of the most common, uses graphical layers.
+- There are several powerful packages for visualization.
+
+- {ggplot2}, one of the most common, uses graphical layers.
 
 ---
 
 ---
-class: inverse, middle, center
+class: middle, center, question
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
 

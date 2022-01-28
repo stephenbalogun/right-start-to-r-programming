@@ -29,28 +29,27 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 
-## Recap of previous sessions
+class: inverse, center, hide-logo, title
+background-image: url(imgs/title.png)
+background-size: cover
 
-.left-column[
+## <span style='font-family:Arial; color: black; font-weight:400;'>Right Start Programming with R language</span>
 
-- Most of your data will be tabular data
+### Part III: Communicate your results, learn more
 
-- Specialized packages exist that support different analytic steps
+.left[
 
-- Often, statistical summaries and visualizations will be required during analysis
+<span style="font-weight: 600; font-size: 28px;">Bilikisu Aderinto</span>
 
-]
+<span style="font-weight: 600; font-size: 28px;">Stephen Balogun</span>
 
-.right-column[
+<span class="my_date">`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`</span>
 
-```{r, recap}
-knitr::include_graphics("./imgs/recap.jpg")
-```
 ]
 
 ---
 
-## Session outline
+## Outline
 
 1. Saving outputs
 
@@ -62,9 +61,7 @@ knitr::include_graphics("./imgs/recap.jpg")
 
 ## Saving outputs
 
-Several ways exist.
-
-- Tables: Use the `export()` from the {rio} package
+Several ways exists
 
     - for csv
     
@@ -88,7 +85,7 @@ Several ways exist.
 
 - Articles
 
-- Abstracts
+- websites
 
 ---
 
@@ -155,7 +152,7 @@ Several ways exist.
 ]
 
 ---
-class: inverse, middle, center
+class: inverse, middle, center, hide-logo
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
 

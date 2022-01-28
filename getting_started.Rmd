@@ -1,11 +1,13 @@
 ---
-title: "Getting Started"
+title: "Right Start Programming with R language"
+subtitle: "Getting started"
 author: 
   - "Stephen Balogun"
   - "Bilikisu Aderinto"
 date: '`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`'
 output:
   xaringan::moon_reader:
+    seal: false
     includes:
       after_body: insert-logo.html
     self_contained: false
@@ -16,9 +18,8 @@ output:
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
+      titleSlideClass: ["left", "middle"]
 ---
-
-
 
 
 ```{r setup, include=FALSE}
@@ -30,22 +31,121 @@ knitr::opts_chunk$set(echo = FALSE,
                       )
 ```
 
+class: inverse, center, hide-logo, title
+background-image: url(imgs/title.png)
+background-size: cover
+
+## <span style='font-family:Arial; color: black; font-weight:400;'>Right Start Programming with R language</span>
+
+### Part I: Getting started
+
+.left[
+
+<span style="font-weight: 600; font-size: 28px;">Stephen Balogun</span>
+
+<span style="font-weight: 600; font-size: 28px;">Bilikisu Aderinto</span>
+
+<span class="my_date">`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`</span>
+
+]
+
+---
+
+## Stephen Balogun
+
+.left-column[
+```{r, stephen}
+knitr::include_graphics("./imgs/Stephen.png")
+```
+]
+
+.right-column[
+
+- A Public Health Physician
+
+- A healthcare improvement safety expert - led me to data science
+
+- Disease surveillance expert and epidemiologist
+
+- Author, [{tidyndr}](https://CRAN.R-project.org/package=tidyndr)
+
+- Co-founder: [r4hds](https://r4hds.netlify.app/)
+
+- Co-organizer: [Abuja R user Group](https://www.meetup.com/Abuja-R-User-Group-Meetup/)
+
+- `r fontawesome::fa("globe")`: [stephenbalogun.github.io/stbalogun](https://stephenbalogun.github.io/stbalogun/) `r emoji::emoji("smile")`
+
+- `r fontawesome::fa("twitter")`: [@eppydoc]((https://twitter.com/eppydoc) `r emoji::emoji("thumbsup")`
+
+- `r fontawesome::fa("linkedin")`: [Stephen Balogun](https://www.linkedin.com/in/stbalogun/) 
+]
+
+---
+
+## Bilikisu Aderinto
+
+.f3[
+&#x1F44B; Hi, I'm **Bilikisu Wunmi Aderinto**
+]
+
+--
+
+.f3[
+&#x1F426; [&commat;qbwoa](https://twitter.com/qbwoa)
+]
+
+--
+
+.f3[
+&#x1F9D1;&#x200D;&#x1F4BB; [baderinto.github.io](https://baderinto.github.io)
+]
+
+--
+
+`r fontawesome::fa("linkedin")` .f3[ [Bilikisu Wunmi Aderinto](https://www.linkedin.com/in/bilikisuaderinto/)]
+
+--
+
+.f3[
+&#x1F4BC; [Business Data Laboratory](https://business-datalab.com): **Principal Consultant/freelancer**
+]
+
+--
+.f3[&#x1F469;[Abuja R user Group](https://www.meetup.com/Abuja-R-User-Group-Meetup/): **Founder, Co-organizer** 
+]
+
+--
+.f3[&#x1F469;[R-Ladies Abuja](https://https://www.meetup.com/rladies-abuja/): **Co-founder, Organizer** 
+]
+
+---
+
+class: top, center, hide-logo, abuja
+background-image: url(imgs/LOGO.jfif)
+
+# About Abuja R user Group
+
+
+---
 
 ## What this course will teach you?
 
 .pull-left[
 
-- Getting started
-
-    - Installing the required softwares
     
-    - Setting up your R workspace
-    
-- Part I
+- Part I: Getting started
 
+    - Workshop assumptions
+    
     - Why use R?
     
     - Overview of data science/data analytics
+    
+    - Tabular data and its building blocks
+    
+    - Installing the required softwares
+    
+    - Setting up your R workspace
     
     - Using R and RStudio
 
@@ -95,12 +195,12 @@ knitr::include_graphics("./imgs/assumptions.png")
 ```
 ]
 
----
-class: inverse, middle, center
-background-image: url(imgs/poster.jpeg)
-background-size: contain
+<!-- --- -->
+<!-- class: inverse, middle, center hide-logo -->
+<!-- background-image: url(imgs/poster.jpeg) -->
+<!-- background-size: contain -->
 
-# Meet the facilitators!
+<!-- # Meet the facilitators! -->
 
 
 ---
@@ -131,9 +231,41 @@ background-size: contain
 
 .pull-right[
 
-<!-- ```{r, industries, out.width="80%"} -->
-<!-- knitr::include_graphics("./imgs/industries_02.png") -->
-<!-- ``` -->
+```{r, dashboards-01, out.width="80%"}
+knitr::include_graphics("./imgs/dashboards_01.png")
+```
+
+```{r, dashboards-02, out.width="80%"}
+knitr::include_graphics("./imgs/dashboards_02.png")
+```
+
+]
+
+---
+
+## Example applications
+
+.pull-left[
+
+```{r, example-01, out.width="80%"}
+knitr::include_graphics("./imgs/games_03.png")
+```
+
+```{r, example-02, out.width="80%", fig.height=3}
+knitr::include_graphics("./imgs/ij_04_edited.png")
+```
+
+]
+
+.pull-right[
+
+```{r, example-03, out.width="80%"}
+knitr::include_graphics("./imgs/website_01.png")
+```
+
+```{r, example-04, out.width="80%"}
+knitr::include_graphics("./imgs/website_02.png")
+```
 
 ]
 
@@ -158,7 +290,7 @@ background-size: contain
 
 - Google, Facebook, Microsoft, Twitter
 
-- Norvatis wHO, Bioconductor (genomics data analysis), Janssen
+- Norvatis WHO, Bioconductor (genomics data analysis), Janssen
 
 ]
 
@@ -248,22 +380,20 @@ knitr::include_graphics("./imgs/datascience workflow.png")
 
 ## Tabular data
 
-.left-column[
+.pull-left[
 
-- Rows are horizontal
+- Rows are horizontal, columns are vertical
 
-- Columns are vertical
+- Should be __*tidy*__ each:
 
-- Should be __*tidy*__
-
-    - Each variable must have its own column
+    - variable must have its own column
     
-    - Each observation must have its own row
+    - observation must have its own row
     
-    - Each value must have its own cell
+    - value must have its own cell
 ]
 
-.right-column[
+.pull-right[
 ```{r, tidy}
 knitr::include_graphics("./imgs/tidy data.png")
 ```
@@ -295,26 +425,34 @@ knitr::include_graphics("./imgs/tidy.png")
 
 ---
 
-## Variables
+## Atomic vectors (variables) in R
 
-- Numeric variables
+.pull-left[
 
-    - Continuous (can be expressed as fractions) e.g. weight
-    
-    - Discrete (always whole numbers) e.g. heart rate
+- These are building blocks of tabular data
 
-- Categorical variables (generally coded)
+- Four common atomic variables
 
-    - ordinal (a graduation pattern observable) e.g. level of education
-    
-    - nominal (no ranking) e.g. gender/sex
-    
-- Text variables e.g. Name
+  - Double (continuous variables)
+  
+  - Integer (discrete or count variables)
+  
+  - Characters (strings) - surrounded by quotes
+  
+  - Logical (boolean) - `TRUE/FALSE`, `T/F`
 
-- __*Type of analysis depends on the variable type*__
+- __*Variables can be converted from one form to another*__
 
-- __*Variables can be converted from one form to another*__ e.g. age (a numeric variable), can be binned into age-groups (a categorical variable)
+- Others: augmented (s3 atomic) vectors and dataframes
+]
 
+.pull-right[
+
+```{r, blocks}
+knitr::include_graphics("./imgs/blocks.jpg")
+```
+
+]
 
 ---
 
@@ -340,11 +478,10 @@ knitr::include_graphics("./imgs/tidy.png")
 
 .left-column[
 
-- Visit the [`CRAN` website](https://cran.r-project.org)
+- Visit the [`CRAN` website](https://cran.r-project.org): <br/> https://cran.r-project.org
 
-- Follow the instructions provided. 
+- Follow the instructions provided
 
-- I encourage you accept default settings.
 ]
 
 .right-column[
@@ -373,12 +510,6 @@ knitr::include_graphics("./imgs/rstudio.png")
 ```
 ]
 
-
----
-## Installation - Required R packages
-
-
-
 ---
 
 ## Setting up your workspace 
@@ -404,7 +535,6 @@ knitr::include_graphics("./imgs/workspace2.png")
 ]
 
 ---
-
 
 ## Setting up your workspace - Project
 
@@ -456,14 +586,35 @@ knitr::include_graphics("./imgs/rstudio pane.png")
 ```
 ]
 
+---
+
+## Installation - Required R packages
+
+- tidyverse, lubridate, skimr packages
+
+ <br/>
+    
+    
+    install.packages("tidyverse", dependencies = TRUE)
+
+    install.packages("lubridate", dependencies = TRUE)
+
+    install.packages("skimr", dependencies = TRUE)
+
+    
+
+- You do not have to repeat the steps above if you have installed the packages before now
+
+- You need internet connection to install a package
 
 ---
+
 
 ## R functions
 
 - Essentially the "heart" of R
 
-- R can perform simple arithmetics like `1 + 1`
+- R can perform simple arithmetic like `1 + 1`
 
 - Most functions follow this format:
 
@@ -474,11 +625,9 @@ knitr::include_graphics("./imgs/rstudio pane.png")
 - Example, assuming you have a population of 10 and you want to sample 2 persons (without replacement)
 
 
-    sample(x = 1:10, size = 2, replace = FALSE)
+    install.packages(tidyverse, dependencies = TRUE)
 
 - You can have functions with no arguments e.g. `Sys.Date()`
-
-- You can also have functions without name (so called anonymous functions)
 
 ---
 
@@ -488,37 +637,24 @@ knitr::include_graphics("./imgs/rstudio pane.png")
 
 - All R functions are contained in *packages*
 
-- *R packages* are a collection of *functions* that perform similar tasks
+- *R packages* are a collection of *functions* that perform related tasks
 
 - R comes with pre-installed packages 
 
-- Packages extend the functions of base R
-
-- Additional packages can be installed depending on your needs
+- Additional packages extend the functions of base R. They can be installed depending on your needs
 
 - *CRAN* and *GitHub* are two common package repositories
 
-- You can also write your own packages!!!
+- You can also write your own package!!!
 
 ]
 
 .pull-right[
-- to install a package from CRAN, use:
 
-    `install.packages("pkg_name")`
+```{r, rpackages}
+knitr::include_graphics("./imgs/rpackages.png")
+```
 
-- better still, use the `p_install()` function from the {pacman} package:
-
-    p_install("pkg_name")
-    
-- Load packages (except for base R packages)
-
-- To load a package, use:
-
-  `library("pkg_name")` or
-  
-  `p_load("pkg_name")` # the `p_load()` function is from the {pacman} package so yu will have to load {pacman} first
-  
 ]
 
 ---
@@ -526,161 +662,35 @@ knitr::include_graphics("./imgs/rstudio pane.png")
 
 ## Assigning values
 
-.pull-left[
+.right-column[
 
 - R can let you "save" a value for re-use
 
 - To save a value, decide on the name you want to give it
 
-- Use syntactic names
+- Common naming conventions are:
 
-  - A combination of letters, digits, ".", and "_"
+    - snakecase: this_is_a_snake_case
+    
+    - camelcase: thisIsACamelCase
 
-  - Don't start with a number
-  
-  - When you start with a ".", it cannot be followed by a number 
-  
-  - no spaces allowed
-  
-  - avoid *reserved* words
-  
-]
-
-.pull-right[
-
-- Use meaningful names (for your sake and others)
-
-- Generally two common naming conventions (snakecase & camelcase):
-
-  - Here is a snakecase example: this_is_a_snake_case
-  
-  - Here is a camelcase example: thisIsACamelCase
-  
-- I recommend the snakecase
+- Use meaningful names
 
 - Caution!! Existing values of a similar name will be overwritten so names have to be unique
 
-]
-  
----
+- You can include comments in your code using `#`
 
-## Vectors: data building blocks
-
-.pull-left[
-
-- How R recognise variable/data type
-
-- Atomic vectors (4 common)
-
-  1. integers (equivalent of discrete variables) e.g. `c(20L, 4L, 100L)`
   
-  2. double (equivalent of continuous variables) e.g. `c(20, 4, 100)`
-  
-      are approximations (is 2 equals to squaroot of 2 exponential 2?)
-  
-  3. logical/boolean
-  
-  4. characters e.g. `c("Stephen", "12", "TRUE")`
-  
-  5. complex
-  
-  6. raw
 ]
 
-.pull-right[
+.left-column[
 
-#### Hierarchy of vectors
+```{r, assign}
 
-```{r, vectors}
-knitr::include_graphics("./imgs/vector coercion.png")
+knitr::include_graphics("./imgs/asssign.png")
 ```
 
-*try*: c(20, TRUE, "Stephen")
 ]
-
----
-
-## Vectors: lists & augmented vectors
-
-.pull-left[
-
-How about dates & categorical variables?
-
-- 4 Augmented vectors
-
-  1. factors (from integers)
-  
-  2. date (from double) 
-  
-    R format for date is the ISO8601 (yyyy-mm-dd)
-  
-  3. datetime (from double)
-  
-  4. duration i.e. time difference (from double)
-
-]
-
-.pull-right[
-
-What if I want to have a mix of data types?
-
-- Lists
-
-    e.g. `list(29, TRUE, "Stephen")`
-
-- Dataframes
-
-    - data with rows and columns
-    
-    - variables are in the columns, observations in the rows (tidy data)
-    
-    - columns must be of equal length
-    
-    - each column can have only one type of vector
-
-]
-
-
----
-
-## Working with vectors
-
-.pull-left[
-
-What type of vector am I dealing with?
-
-- use `typeof()` e.g.
-
-    `typeof(10)`
-    
-    `typeof("Stephen")`
-    
-    `typeof(TRUE)`
-    
-    `typeof("FALSE")` [practice]
-
-]
-
-.pull-right[
-    
-Can I check to know if my vector is of a particular type?
-
-- use `is.atomic_type` e.g.
-
-    `is.double(10)`
-    
-    `is.logical(TRUE)`
-
-Can I force my vectors to change from one type to another? yes
-
-- use `as.atomic_type` e.g.
-
-    `as.integer("10")`
-  
-    `as.logical("FALSE")`
-
-]
-
 ---
 
 ## Arithmetic operators
@@ -723,29 +733,28 @@ Can I force my vectors to change from one type to another? yes
 
 - and (&) e.g. `4 > 6 & 3`
 
-- contains (%in%) e.g. `c("Stephen", "Taiye", "Kehinde", "Tade", "Tola") %in% c("Taiye", "Kehinde")`
 ]
 
 ---
 
 ## Summary
 
-1. R is free, versatile and used in various industries
+- R is free, versatile and used in various industries
 
-2. R can ingest several types of data and cross-communicates with several other analytic software
+- R can ingest several types of data and cross-communicates with several other analytic software
 
-3. Data is not always tidy. You may need to manipulate the data to get it in the right format
+- Data is not always tidy. You may need to manipulate the data to get it in the right format
 
-2. Set up your working environment, use R project
+- Set up your working environment, use R project
 
-3. Most interactions with R will be via functions. Functions are organized into packages.
+- Most interactions with R will be via functions. Functions are organized into packages.
 
-4. If you want to keep objects in memory, you must assign them to a name.
+- If you want to keep objects in memory, you must assign them to a name.
 
-5. Most arithmetic operators are similar to what you would expect.
+- Most arithmetic operators are similar to what you would expect.
 
 ---
-class: inverse, middle, center
+class: middle, center, hide-logo, question
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
 

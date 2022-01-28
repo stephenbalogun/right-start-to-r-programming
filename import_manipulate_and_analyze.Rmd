@@ -1,11 +1,13 @@
 ---
 title: "PART II: Import, manipulate and analyze your data"
+subtitle: "Import, manipulate and analyse"
 author:
   - "Bilikisu Aderinto"
   - "Stephen Balogun"
 date: '`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`'
 output:
   xaringan::moon_reader:
+    seal: false
     includes:
       after_body: insert-logo.html
     self_contained: false
@@ -16,9 +18,8 @@ output:
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
+      titleSlideClass: ["left", "middle"]
 ---
-
-
 
 
 ```{r setup, include=FALSE}
@@ -30,6 +31,25 @@ knitr::opts_chunk$set(echo = FALSE,
                       )
 ```
 
+class: inverse, center, hide-logo, title
+background-image: url(imgs/title.png)
+background-size: cover
+
+## <span style='font-family:Arial; color: black; font-weight:400;'>Right Start Programming with R language</span>
+
+### Part II: Import, manipulate and analyse
+
+.left[
+
+<span style="font-weight: 600; font-size: 28px;">Bilikisu Aderinto</span>
+
+<span style="font-weight: 600; font-size: 28px;">Stephen Balogun</span>
+
+<span class="my_date">`r format(as.Date("2022-01-29"), "%a, %B %d %Y")`</span>
+
+]
+
+---
 
 ## Recap of Part I
 
@@ -52,7 +72,7 @@ knitr::include_graphics("./imgs/recap.jpg")
 
 ---
 
-## Part II outline
+## Outline
 
 1. Importing your data (web, computer, other sources)
 
@@ -66,35 +86,17 @@ knitr::include_graphics("./imgs/recap.jpg")
 
 ---
 
-## Our data at a glance (review)
+## Our data at a glance: Africa COVID-19 dataset
 
-.pull-left[
+- Country/Region: Country of reporting
 
-- ID: for patient/respondent identification
+- Date: date of reporting
 
-- Date: date of form completion 
+- Confirmed: total confirmed cases of COVID-19 from the country
 
-- Age: current age of respondent/patient
+- Deaths: total confirmed deaths due to COVID-19 from the country
 
-- Sex: biological sex of respondent/patient at birth (Either male or female)
-
-- State: One of 6 states (Rivers, FCT, Lagos, Sokoto, Abia and Kaduna)
-
-]
-
-.pull-right[
-
-- Married: a dichotomous variable (YES/NO)
-
-- Weight: weight of respondent/patient in "Kg"
-
-- height: height of respondent/patient in "cm"
-
-- blood pressue: systolic (numerator) and diastolic (denominator) blood pressure of respondent/patient
-
-- bmi: values obtained from the field by dividing the weight (in Kg) by the square of the height (in metres)
-]
-
+- Recovered: Cumulative number of persons who have recovered from COVID-19 from the country
 
 
 ---
@@ -237,21 +239,19 @@ We need to:
 
 ---
 
-## Exploratory questions
+## Practice
 
-1. How many persons from each state?
+- Simple exploration
 
-2. Plot a graph of the gender distribution
+- Summary of your data
 
-3. Plot a graph to demonstrate the relationship between weight and height
+- Using the `pipe` operator
 
-4. How many persons have systolic hypertension?
-
-5. For each gender in each state, what are the average age, average height, and average weight?
+- Data wrangling
 
 ---
 
-class: inverse, middle, center
+class: middle, center, hide-logo, question
 background-size: contain
 
 # Plotting charts
@@ -326,6 +326,18 @@ knitr::include_graphics("./imgs/themes.png")
 
 ---
 
+## Practice - 2
+
+- Using `{ggplot2}` package
+
+- Mapping variables
+
+- Selecting your type of chart
+
+- Plotting bar chart
+
+---
+
 ## Summary
 
 - R can import several file types from both local or online platforms
@@ -341,7 +353,7 @@ knitr::include_graphics("./imgs/themes.png")
 ---
 
 ---
-class: inverse, middle, center
+class: middle, center, question
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
 
