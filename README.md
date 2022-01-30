@@ -6,6 +6,4 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of intro_to_R is to provide a basic introduction to R,
-especially for novices in the healthcare development sector. It assumes
-zero background knowledge of programming, R or statistics.
+The goal of right start programming with R is to introduce interested persons to working with R. It is a four-hour workshop hosted by Abuja R user Group.
